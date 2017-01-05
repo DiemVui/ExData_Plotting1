@@ -1,0 +1,5 @@
+powerdata <- read.table("household_power_consumption.txt" ,header = T,sep=";" )
+subdata <-subset(powerdata,Date=="1/2/2007" | Date=="2/2/2007")
+png(file = "plot1.png", bg = "transparent",width = 480, height = 480)
+hist(as.numeric(subdata$Global_active_power)/500,col="red",main = "Global Active Power",xlab="Global Active Power(kilowatts)")
+dev.off()
