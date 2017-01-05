@@ -1,4 +1,5 @@
-powerdata <- read.table("household_power_consumption.txt" ,header = T,sep=";" )
+powerdata<- read.csv2('household_power_consumption.txt', stringsAsFactors = FALSE, colClasses = c("character", "character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"), na.strings=c("?"), dec=".")
+
 png(file = "plot4.png", bg = "transparent",width = 480, height = 480)
 
 subdata <-subset(powerdata,Date=="1/2/2007" | Date=="2/2/2007")
